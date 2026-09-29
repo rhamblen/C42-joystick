@@ -14,9 +14,12 @@ This is the sister of the C42 throttle sketch. That one reads a single AS5600 di
 
 ## Build
 
-1. Arduino IDE, board **Arduino Leonardo** (a Pro Micro is a Leonardo).
-2. Library Manager: install **Joystick** by Matthew Heironimus. No AS5600 library is needed because the sensors are read directly over `Wire`.
-3. Open `c42_joystick/c42_joystick.ino` and upload.
+1. Copy `hardware/c42` into your sketchbook's `hardware` folder, so that you have `<sketchbook>/hardware/c42/avr/boards.txt`, then restart the Arduino IDE.
+2. Select the board **C42 Control Stick (Pro Micro)**. It is the stock Leonardo with its USB name changed, so the stick shows up as "C42 Control Stick" and not "Arduino Leonardo". Plain **Arduino Leonardo** still works, just under that name.
+3. Library Manager: install **Joystick** by Matthew Heironimus. No AS5600 library is needed because the sensors are read directly over `Wire`.
+4. Open `c42_joystick/c42_joystick.ino` and upload.
+
+The custom board also uses its own USB PID (0x1209:0x0001, a pid.codes test ID). Windows caches a joystick's name per VID/PID, so this is what keeps it from reusing the "Arduino Leonardo" name. It also keeps it separate from the C42 throttle, which still uses the Leonardo's 0x8036. For the few seconds after a reset, the bootloader still shows up as a Leonardo. That's normal.
 
 ## Wiring
 

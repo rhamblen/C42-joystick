@@ -1,0 +1,51 @@
+# A Pro Micro / Leonardo that enumerates as "C42 Control Stick" instead of
+# "Arduino Leonardo". Everything except the USB name and PID is the stock
+# leonardo entry from arduino:avr.
+#
+# The PID differs from the Leonardo's 0x8036 on purpose: Windows caches a
+# joystick's display name per VID/PID, so keeping 0x8036 would keep showing
+# "Arduino Leonardo" and clash with the throttle, which still uses it.
+# 0x1209:0x0001 is pid.codes' test PID for private, non-distributed hardware.
+
+c42stick.name=C42 Control Stick (Pro Micro)
+
+c42stick.vid.0=0x2341
+c42stick.pid.0=0x0036
+c42stick.vid.1=0x1209
+c42stick.pid.1=0x0001
+c42stick.upload_port.0.vid=0x2341
+c42stick.upload_port.0.pid=0x0036
+c42stick.upload_port.1.vid=0x2A03
+c42stick.upload_port.1.pid=0x0036
+c42stick.upload_port.2.vid=0x1209
+c42stick.upload_port.2.pid=0x0001
+
+c42stick.upload.tool=arduino:avrdude
+c42stick.upload.tool.default=arduino:avrdude
+c42stick.upload.protocol=avr109
+c42stick.upload.maximum_size=28672
+c42stick.upload.maximum_data_size=2560
+c42stick.upload.speed=57600
+c42stick.upload.disable_flushing=true
+c42stick.upload.use_1200bps_touch=true
+c42stick.upload.wait_for_upload_port=true
+
+c42stick.bootloader.tool=arduino:avrdude
+c42stick.bootloader.tool.default=arduino:avrdude
+c42stick.bootloader.low_fuses=0xff
+c42stick.bootloader.high_fuses=0xd8
+c42stick.bootloader.extended_fuses=0xcb
+c42stick.bootloader.file=caterina/Caterina-Leonardo.hex
+c42stick.bootloader.unlock_bits=0x3F
+c42stick.bootloader.lock_bits=0x2F
+
+c42stick.build.mcu=atmega32u4
+c42stick.build.f_cpu=16000000L
+c42stick.build.vid=0x1209
+c42stick.build.pid=0x0001
+c42stick.build.usb_product="C42 Control Stick"
+c42stick.build.usb_manufacturer="C42"
+c42stick.build.board=AVR_LEONARDO
+c42stick.build.core=arduino:arduino
+c42stick.build.variant=arduino:leonardo
+c42stick.build.extra_flags={build.usb_flags}

@@ -2,7 +2,8 @@
 // Library (install via Arduino Library Manager):
 //   "Joystick" by Matthew Heironimus
 // The AS5600s are read directly over Wire, so no AS5600 library is needed.
-// Board: Arduino Leonardo / Pro Micro (needs native USB HID, i.e. an ATmega32u4 board)
+// Board: "C42 Control Stick (Pro Micro)" from hardware/c42 in this repo, which is the
+//        Leonardo renamed over USB; plain Arduino Leonardo also works (ATmega32u4)
 //
 // Wiring:
 //   TCA9548A  VIN->VCC, GND->GND, SDA->D2, SCL->D3, A0/A1/A2 -> GND (address 0x70)

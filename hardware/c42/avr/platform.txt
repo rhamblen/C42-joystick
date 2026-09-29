@@ -1,0 +1,4 @@
+# C42 controllers: board entries only. The core, variant, build recipes and
+# upload tools all come from the stock Arduino AVR platform (arduino:avr).
+name=C42 Controllers
+version=1.0.0
