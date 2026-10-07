@@ -8,7 +8,7 @@
 // Wiring:
 //   TCA9548A  VIN->VCC, GND->GND, SDA->D2, SCL->D3, A0/A1/A2 -> GND (address 0x70)
 //   AS5600    one per mux channel, VCC/GND/SDA/SCL to that channel's SDn/SCn
-//             ch 0 = pitch, ch 1 = roll, ch 2 = brake  (see MUX_CH_* below)
+//             SD1 = pitch, SD2 = roll, SD3 = brake  (see MUX_CH_* below)
 //   Trim up   D4 -> switch -> GND
 //   Trim down D5 -> switch -> GND
 //
@@ -27,9 +27,9 @@
 #define MUX_ADDR    0x70
 #define AS5600_ADDR 0x36
 
-#define MUX_CH_PITCH 0
-#define MUX_CH_ROLL  1
-#define MUX_CH_BRAKE 2
+#define MUX_CH_PITCH 1
+#define MUX_CH_ROLL  2
+#define MUX_CH_BRAKE 3
 
 #define PIN_TRIM_UP   4
 #define PIN_TRIM_DOWN 5
