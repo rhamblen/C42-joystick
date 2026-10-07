@@ -1,5 +1,7 @@
 # C42 Joystick Firmware
 
+**Current version: v1.0.0.** See [CHANGELOG.md](CHANGELOG.md).
+
 Firmware for a 3D-printed Ikarus C42 flight-sim joystick. It runs on an Arduino Pro Micro, which shows up in Windows as one USB joystick with three axes and two buttons:
 
 | HID | Control | Sensor |
