@@ -4,9 +4,9 @@ Firmware for a 3D-printed Ikarus C42 flight-sim joystick. It runs on an Arduino 
 
 | HID | Control | Sensor |
 |---|---|---|
-| X | Roll | AS5600 on TCA9548A SD2 |
-| Y | Pitch | AS5600 on TCA9548A SD1 |
-| Z | Hand brake | AS5600 on TCA9548A SD3 |
+| X | Roll | AS5600 on TCA9548A SD3 |
+| Y | Pitch | AS5600 on TCA9548A SD2 |
+| Z | Hand brake | AS5600 on TCA9548A SD4 |
 | Button 1 | Trim up | tact switch, D4 → GND |
 | Button 2 | Trim down | tact switch, D5 → GND |
 
@@ -28,9 +28,9 @@ The custom board also uses its own USB PID (0x1209:0x0001, a pid.codes test ID).
 | Pro Micro D2 (SDA) / D3 (SCL) | TCA9548A SDA / SCL |
 | Pro Micro VCC / GND | TCA9548A VIN / GND, and every AS5600 VCC / GND |
 | TCA9548A A0, A1, A2 | GND (address 0x70) |
-| TCA9548A SD1/SC1 | pitch AS5600 |
-| TCA9548A SD2/SC2 | roll AS5600 |
-| TCA9548A SD3/SC3 | brake AS5600 |
+| TCA9548A SD2/SC2 | pitch AS5600 |
+| TCA9548A SD3/SC3 | roll AS5600 |
+| TCA9548A SD4/SC4 | brake AS5600 |
 | D4, D5 | trim up / trim down switch, other leg to GND (internal pull-ups) |
 
 The channel, pin and axis-reverse settings are `#define`s at the top of the sketch.
